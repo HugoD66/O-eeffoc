@@ -1,0 +1,31 @@
+<div class="post-list">
+    <h1>{{ this.post.title }}</h1>
+    <div class="post-title-desc">
+        {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+        {% else %}
+            <h3>Description</h3>
+        {% endif %}
+        <p>{{ this.post.description }}</p>
+    </div>
+    <img src="{{ asset('images/recipe-picture/' ~ this.post.getPicture()) }}" alt="Photo de post.">
+    <ul>
+        <li>Ecrit le:
+            <br>
+            <u>{{ this.post.createdAt|date('d/m/Y') }}</u></li>
+        <li>Par:
+            <br>
+            <u>{{ this.post.createdBy }}</u></li>
+        <li>
+            Nombre de like : <u>{{ this.post.likingUsers|length }}</u>
+        </li>
+    </ul>
+    <button class="like-button {{ this.post.isLikedByCurrentUser(app.user) ? 'liked' : '' }}" data-post-id="{{ this.post.id }}">
+        <img class="like-image {{ this.post.isLikedByCurrentUser(app.user) ? '' : 'clicked' }}" src="{{ asset('images/icones/like.png') }}">
+    </button>
+
+    <button class="unlike-button {{ this.post.isLikedByCurrentUser(app.user) ? '' : 'liked' }}" data-post-id="{{ this.post.id }}">
+        <img class="like-image {{ this.post.isLikedByCurrentUser(app.user) ? 'clicked' : '' }}" src="{{ asset('images/icones/liked.png') }}">
+    </button>
+
+</div>
+

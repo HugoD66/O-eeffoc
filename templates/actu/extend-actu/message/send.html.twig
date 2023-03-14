@@ -1,0 +1,29 @@
+<section>
+    <div class="messagerie">
+        <h1>Envoyer un message</h1>
+        <div class="form-two-send-message">
+
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            <div class="form-two-desc">
+                <div class="form-two-desc-flex">
+                    {{ form_row(form.title) }}
+                    {{ form_row(form.recipient) }}
+
+                </div>
+                {{ form_row(form.message) }}
+            </div>
+                <div class="list-button-form">
+                <button type="button" class="customButton3">
+                    <a href="{{ path('received', { 'id' : app.user.id }) }}">Reçus</a>
+                </button>
+                    {{ form_row(form.submit, { 'label': 'Envoyer'}) }}
+                    <button type="button" class="customButton3">
+                    <a href="{{ path('app_messenger', { 'id' : app.user.id }) }}">Annuler</a>
+                </button>
+
+                </div>
+            {{ form_end(form) }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,49 @@
+<section>
+        {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+                <div class="messagerie">
+                        <h1>Messagerie</h1>
+                        <h2>{{ user.username }}</h2>
+                        <div class="button-list">
+                                <div class="button-list-envoye">
+                                        <p>Envoyés<br><b>{{ app.user.sent|length }}</b></p>
+                                        <button type="button" class="customButton2">
+                                                <a href="{{ path('sent', { 'id' : app.user.id }) }}">Envoyés</a>
+                                        </button>
+                                </div>
+                                <div class="button-list-recus">
+                                        <p>Reçus<br><b>{{ app.user.received|length }}</b></p>
+                                        <button type="button" class="customButton2">
+                                                <a href="{{ path('received', { 'id' : app.user.id }) }}">Reçus</a>
+                                        </button>
+                                </div>
+                        </div>
+                        <button type="button" class="customButton1 new-message">
+                                <a href="{{ path('send', { 'id' : app.user.id }) }}">Nouveau Message</a>
+                        </button>
+                </div>
+        {% else %}
+                <div class="messagerie">
+                        <h1>Messagerie</h1>
+                        <h2>{{ user.username }}</h2>
+                        <div class="button-list">
+                                <div class="button-list-envoye">
+                                        <p>Envoyés<br><b>{{ app.user.sent|length }}</b></p>
+                                        <button type="button" class="customButton2">
+                                                <a href="{{ path('sent', { 'id' : app.user.id }) }}">Envoyés</a>
+                                        </button>
+                                </div>
+                                <div class="button-list-recus">
+                                        <p>Reçus<br><b>{{ app.user.received|length }}</b></p>
+                                        <button type="button" class="customButton2">
+
+                                                <a href="{{ path('received', { 'id' : app.user.id }) }}">Reçus</a>
+                                        </button>
+                                </div>
+                        </div>
+                        <button type="button" class="customButton1 new-message">
+                                <a href="{{ path('send', { 'id' : app.user.id }) }}">Nouveau Message</a>
+                        </button>
+                </div>
+
+    {% endif %}
+</section>

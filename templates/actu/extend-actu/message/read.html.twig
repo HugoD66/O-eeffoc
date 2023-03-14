@@ -1,0 +1,20 @@
+<section>
+    <div class="messagerie">
+        <div class="read-one">
+            <h1>{{ message.title }}</h1>
+            <p class="date">Le : <i>{{ message.createdAt|date }}</i></p>
+            <p class="sujet">{{ message.message }}</p>
+            <p class="sender">Envoyé par : <u>{{ message.sender }}</u></p>
+
+                {# LIENS A FAIRE  #}
+            <div class="list-button-read">
+                <button type="button" class="customButton2">
+                    <a href="{{ path('send', { 'id' : app.user.id }) }}">Répondre</a>
+                </button>
+                <button type="button" class="customButton2">
+                    <a href="{{ path('app_messenger', { 'id' : app.user.id }) }}">Retour</a>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,125 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block body %}
+    <div class="actu-screen">
+
+        {% include 'fixed/header.html.twig' %}
+        {% include 'fixed/nav.html.twig' %}
+
+        {% if app.user %}
+            {% set user_id = app.user.id %}
+            {% if app.request.getPathInfo() == '/O-eeffoc/Actu' %}
+                {% include 'actu/extend-actu/section.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Gestion-utilisateur/' ~ user_id %}
+                    {% include('actu/extend-actu/gestion.html.twig') %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Complete-user/' ~ user_id  %}
+                {% include 'actu/extend-actu/form/complete_user.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Messagerie-utilisateur/' ~ user_id  %}
+                {% include 'actu/extend-actu/messenger.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Changement-mdp/' ~ user_id  %}
+                {% include 'actu/extend-actu/form/change_password.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Changement-mdp/Success' %}
+                {% include 'redirect/redirect-success-change-password.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Gestion-utilisateur/Nouveau-post/' ~ user_id %}
+                {% include 'actu/extend-actu/form/new_post.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Messagerie-utilisateur/envoyer/' ~ user_id %}
+                {% include 'actu/extend-actu/message/send.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Messagerie-utilisateur/recus/' ~ user_id %}
+                {% include 'actu/extend-actu/message/received.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Messagerie-utilisateur/envoyes/' ~ user_id %}
+                {% include 'actu/extend-actu/message/sent.html.twig' %}
+            {% elseif app.request.getPathInfo() == '/O-eeffoc/Messagerie-utilisateur/recus/' ~ user_id ~ '/' ~ message.id %}
+                {% include 'actu/extend-actu/message/read.html.twig' %}
+
+            {% endif %}
+        {% endif %}
+        {% include 'fixed/aside.html.twig' %}
+        <div id="success-message-async"></div>
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success success-home success-custom">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% include 'fixed/footer.html.twig' %}
+    </div>
+    <div id="backgroundModales"></div>
+    <!-- Modale Login -->
+    {% if not is_granted("IS_AUTHENTICATED_FULLY") %}
+        {% include 'UI/modaleConnexion.html.twig' %}
+    {% endif %}
+
+
+{# Rotation du Logo #}
+    <script>
+        const logo = document.getElementById("logo");
+        let angle = 0;
+        setInterval(() => {
+            angle += 1;
+            logo.style.transform = `rotate(${angle}deg)`;
+        }, 10);
+    </script>
+{# Likes #}
+    <script>
+        const likeButtons = document.querySelectorAll('.like-button');
+        likeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const postId = button.dataset.postId;
+                fetch(`/O-eeffoc/like-post/${postId}`, { method: 'POST' })
+                    .then(response => {
+                        if (response.ok) {
+                            button.classList.add('liked');
+                            const unlikeButton = button.nextElementSibling;
+                            unlikeButton.classList.remove('liked');
+                            const likeImage = button.querySelector('.like-image');
+                            likeImage.classList.add('clicked');
+
+                            const successMessage = document.getElementById('success-message-async');
+                            successMessage.classList.add('success-message');
+                            successMessage.innerText = 'Post liké!';
+                            successMessage.style.animation = 'fade-out 2s forwards';
+
+                            setTimeout(() => {
+                                successMessage.classList.remove('success-message');
+                                successMessage.innerText = ' ';
+                                successMessage.style.animation = '';
+                            }, 1500);
+                        } else {
+                            alert('Erreur au like du posts');
+                        }
+                    });
+            });
+        });
+
+        const unlikeButtons = document.querySelectorAll('.unlike-button');
+        unlikeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const postId = button.dataset.postId;
+                fetch(`/O-eeffoc/unlike-post/${postId}`, { method: 'POST', headers: {'Content-Type': 'application/json'} })
+                    .then(response => {
+                        if (response.ok) {
+                            const likeButton = button.previousElementSibling;
+                            likeButton.classList.remove('liked');
+                            button.classList.add('liked');
+                            const likeImage = likeButton.querySelector('.like-image');
+                            likeImage.classList.remove('clicked');
+
+                            const successMessage = document.getElementById('success-message-async');
+                            successMessage.classList.add('success-message');
+                            successMessage.innerText = 'Post unliké!';
+                            successMessage.style.animation = 'fade-out 2s forwards';
+                            setTimeout(() => {
+                                successMessage.classList.remove('success-message');
+                                successMessage.innerText = ' ';
+                                successMessage.style.animation = '';
+                            }, 1500);
+                        } else {
+                            alert('Error unliking post');
+                        }
+                    });
+            });
+        });
+
+    </script>
+{% endblock %}

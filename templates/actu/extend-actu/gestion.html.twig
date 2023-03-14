@@ -1,0 +1,164 @@
+<section>
+<!-- gros bloc body, avec les news-->
+    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+        <!-- Code pour les appareils mobiles -->
+        <div class="section-mobile">
+            <div class="gestion-user">
+                <div class="gestion-user-title">
+                    <h2>Bonjour</h2>
+                    <h3>{{ user.username }}</h3>
+                </div>
+                <div class="gestion-user-buttons">
+                    <button type="button" class="customButton1">
+                        <a href="{{ path('app_complete_user', { 'id' : user.id }) }}">
+                            Complete user
+                        </a>
+                    </button>
+                    <button type="button" class="customButton1">
+                        <a href="{{ path('app_change_password', { 'id' : user.id }) }}">
+                            Changer mdp
+                        </a>
+                    </button>
+                </div>
+                <div class="gestion-user-title-buttons-three">
+                    <h3>Vos derniers posts </h3>
+                    <button type="button" class="customButton2">
+                        <a href="{{ path('app_new_post', { 'id' : user.id }) }}">
+                            Créer
+                        </a>
+                    </button>
+                </div>
+                <div class="gestion-user-post">
+                {% if userPost %}
+                    {% for post in userPost %}
+                        <div class="gestion-user-post-item">
+                            <img src="{{ asset('images/recipe-picture/' ~ post.getPicture()) }}" alt="Photo de post.">
+                            <h4>{{ post.title }}</h4>
+                            <p>Description: {{ post.description|u.truncate(100) }}</p>
+                            <div class="gestion-user-post-date-likes">
+                                <p class="date"><i>{{ post.createdAt|date('d/m/Y') }}</i></p>
+                                <p class="likes">Likes : <u>{{ post.likingUsers|length }}</u></p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>Aucun post trouvé pour cet utilisateur.</p>
+                {% endif %}
+                </div>
+                <div class="followers-followings">
+                    <div class="list">
+                        <h3>Vos followers</h3>
+                        {% if not followings %}
+                        <div class="list-unit">
+                            <p>Aucuns followings pour le moment.</p>
+                        </div>
+                        {% else %}
+                        {% for following in followings %}
+                            <div class="list-unit">
+                                <img src="{{ asset('images/recipe-picture/' ~ following.getPicture()) }}" alt="Photo de profil enregistrée.">
+                                {% if following is not null %}
+                                    <p>{{ following.username }}</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                        {% endif %}
+
+                    </div>
+                    <div class="list">
+                        <h3>Vos followings</h3>
+                        {% if not followers %}
+                            <div class="list-unit">
+                                <p>Aucuns followers pour le moment.</p>
+                            </div>
+                        {% else %}
+                            {% for follower in followers %}
+                                <div class="list-unit">
+                                    <img src="{{ asset('images/recipe-picture/' ~ follower.getPicture()) }}" alt="Photo de profil enregistrée.">
+                                    <p>{{ follower.username }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <!-- Code pour desktop -->
+        <div class="section-desktop">
+            <div class="gestion-user-desktop">
+                <div class="gestion-user-desktop-buttons-title">
+                    <button type="button" class="customButton1">
+                        <a href="{{ path('app_change_password', { 'id' : user.id }) }}">
+                            Changer mdp
+                        </a>
+                    </button>
+                    <h2>Bonjour <br> {{ user.username }}</h2>
+                    <button type="button" class="customButton1">
+                        <a href="{{ path('app_complete_user', { 'id' : user.id }) }}">
+                            Complete user
+                        </a>
+                    </button>
+                </div>
+                <div class="gestion-user-post-titl-button">
+                    <h3>Vos derniers posts </h3>
+                    <button type="button" class="customButton2">
+                        <a href="{{ path('app_new_post', { 'id' : user.id }) }}">
+                            Créer
+                        </a>
+                    </button>
+                </div>
+                <div class="gestion-user-post">
+                    {% if userPost %}
+                        {% for post in userPost %}
+                            <div class="gestion-user-post-item">
+                                <img src="{{ asset('images/recipe-picture/' ~ post.getPicture()) }}" alt="Photo de post.">
+                                <h4>{{ post.title }}</h4>
+                                <p>Description: {{ post.description|u.truncate(100) }}</p>
+                                <div class="gestion-user-post-date-likes">
+                                    <p class="date"><i>{{ post.createdAt|date('d/m/Y') }}</i></p>
+                                    <p class="likes">Likes : <u>{{ post.likingUsers|length }}</u></p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>Aucun post trouvé pour cet utilisateur.</p>
+                    {% endif %}
+                </div>
+                <div class="followers-followings">
+                    <div class="list">
+                    <h3><u>Vos followers</u></h3>
+                        {% if not followings %}
+                            <div class="list-unit">
+                                <p>Aucuns followings pour le moment.</p>
+                            </div>
+                        {% else %}
+                        {% for following in followings %}
+                            <div class="list-unit">
+                                <img src="{{ asset('images/recipe-picture/' ~ following.getPicture()) }}" alt="Photo de profil enregistrée.">
+                                <p>{{ following.username }}</p>
+                            </div>
+                        {% endfor %}
+                        {% endif %}
+
+                    </div>
+                    <div class="list">
+                    <h3><u>Vos followings</u></h3>
+                        {% if not followers %}
+                            <div class="list-unit">
+                                <p>Aucuns followers pour le moment.</p>
+                            </div>
+                        {% else %}
+                        {% for follower in followers %}
+                            <div class="list-unit">
+                                <img src="{{ asset('images/recipe-picture/' ~ follower.getPicture()) }}" alt="Photo de profil enregistrée.">
+                                <p>{{ follower.username }}</p>
+                            </div>
+                        {% endfor %}
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</section>

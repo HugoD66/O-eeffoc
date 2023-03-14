@@ -1,0 +1,58 @@
+<header>
+    <!-- Sa bio, picture ... -->
+    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+        <!-- Code pour les appareils mobiles -->
+        <div class="header-mobile">
+            {% if user %}
+                {% if user.getPicture  %}
+                    <img src="{{ asset('images/recipe-picture/' ~ user.getPicture()) }}" alt="Photo de profil sans enregistrement.">
+                {% else %}
+                    <img src="{{ asset('images/const/picture-profil-if-not-connected.png') }}" alt="">
+                {% endif %}                <div class="description-user">
+                    <ul>
+                        <li>{{ user.username }}</li>
+                    {% if not user.getBirthday or not user.getBio or not user.getPicture %}
+                        <p><a href="{{ path('app_complete_user', { 'id' : user.id }) }}"> Terminez votre inscription ...</a></p>
+                    </ul>
+
+                    {% else %}
+                        <li>{{ user.birthday|date("m/d/Y") }}</li>
+                        </ul>
+                    {% endif %}
+                </div>
+            {% else %}
+                <img src="{{ asset('images/const/picture-profil-if-not-connected.png') }}" alt="">
+            {% endif %}
+        </div>
+    {% else %}
+        <!-- Code pour desktop -->
+        <div class="header-desktop">
+            {% if user %}
+                {% if user.getPicture  %}
+                    <img src="{{ asset('images/recipe-picture/' ~ user.getPicture()) }}" alt="Photo de profil sans enregistrement.">
+                {% else %}
+                    <img src="{{ asset('images/const/picture-profil-if-not-connected.png') }}" alt="">
+                {% endif %}
+                <div class="description-user">
+                    <ul>
+                        <li>{{ user.username }}</li>
+                        <li>{{ user.email }}</li>
+                    {% if not user.getPicture or not user.getBio or not user.getBirthday %}
+                        <p><a href="{{ path('app_complete_user', { 'id' : user.id }) }}"> Terminez votre inscription ...</a></p>
+                    </ul>
+                    {% else %}
+                        <li>{{ user.birthday|date("m/d/Y") }}</li>
+                        <li>{{ user.adress }}</li>
+                        </ul>
+                        <p>{{ user.bio }}</p>
+                    {% endif %}
+                </div>
+            {% else %}
+                <img src="{{ asset('images/const/picture-profil-if-not-connected.png') }}" alt="">
+                <div class="description-user">
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+</header>
+

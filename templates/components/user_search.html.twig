@@ -1,0 +1,27 @@
+
+
+
+<div {{ attributes }} >
+    <input
+            class="input-search-user"
+            type="text"
+            data-model="query"
+            value="{{ query }}"
+            placeholder="Rechercher un utilisateur..."
+    >
+    {% if query is empty  %}
+        {% for user in this.AllUsers %}
+            {{ component('user', {
+                id: user.id
+            }) }}
+        {% endfor %}
+    {% else %}
+        {% for user in this.users %}
+            {{ component('user', {
+                'id': user.id
+            }) }}
+
+        {% endfor %}
+    {% endif %}
+</div>
+

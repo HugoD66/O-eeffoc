@@ -1,0 +1,26 @@
+{% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+    <div class="user-list-mobile">
+        <div class="user-list-mobile-unit">
+            <img src="{{ asset('images/recipe-picture/' ~ this.user.getPicture()) }}" alt="Photo de profil enregistrée.">
+            <p>{{ this.user.username }}</p>
+            <button type="button" class="follow-button {{ this.user.isFollowedByCurrentUser(app.user) ? 'liked' : '' }}" data-user-id="{{ this.user.id }}">
+                <img class="follow-image {{ this.user.isFollowedByCurrentUser(app.user) ? '' : 'clicked' }}" src="{{ asset('images/icones/follow.png') }}">
+            </button>
+            <button type="button" class="unfollow-button {{ this.user.isFollowedByCurrentUser(app.user) ? '' : 'liked' }}" data-user-id="{{ this.user.id }}">
+                <img class="follow-image {{ this.user.isFollowedByCurrentUser(app.user) ? 'clicked' : '' }}" src="{{ asset('images/icones/unfollow.png') }}">
+            </button>
+        </div>
+    </div>
+{% else %}
+    <div class="user-list">
+        <img src="{{ asset('images/recipe-picture/' ~ this.user.getPicture()) }}" alt="Photo de profil enregistrée.">
+
+        <p>{{ this.user.username }}</p>
+            <button type="button" class="follow-button {{ this.user.isFollowedByCurrentUser(app.user) ? 'liked' : '' }}" data-user-id="{{ this.user.id }}">
+                <img class="follow-image {{ this.user.isFollowedByCurrentUser(app.user) ? '' : 'clicked' }}" src="{{ asset('images/icones/follow.png') }}">
+            </button>
+            <button type="button" class="unfollow-button {{ this.user.isFollowedByCurrentUser(app.user) ? '' : 'liked' }}" data-user-id="{{ this.user.id }}">
+                <img class="follow-image {{ this.user.isFollowedByCurrentUser(app.user) ? 'clicked' : '' }}" src="{{ asset('images/icones/unfollow.png') }}">
+            </button>
+    </div>
+{% endif %}

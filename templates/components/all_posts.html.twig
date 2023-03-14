@@ -1,0 +1,5 @@
+{% for post in this.AllPosts|reverse %}
+    {{ component('post', {
+        id: post.id
+    }) }}
+{% endfor %}

@@ -1,0 +1,16 @@
+<footer>
+    <!-- Footer avec seulement logo et animation de la tasse ?  -->
+    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+        <!-- Code pour les appareils mobiles -->
+        <div class="footer-mobile">
+            <img id="logo" src="{{ asset('images/const/o-coffee-withoutBG.png') }}" alt="Representation du logo O-eefoC">
+            <p>eefoc</p>
+        </div>
+    {% else %}
+        <!-- Code pour desktop -->
+        <div class="footer-desktop">
+            <img id="logo" src="{{ asset('images/const/o-coffee-withoutBG.png') }}" alt="Representation du logo O-eefoC">
+            <p>eeffoc</p>
+        </div>
+    {% endif %}
+</footer>

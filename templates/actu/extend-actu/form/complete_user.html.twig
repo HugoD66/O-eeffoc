@@ -1,0 +1,29 @@
+<section>
+    <div class="form-one-complete-user">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+            {{form_row(form.birthday, {
+                'label' : 'Votre date d\'anniversaire:',
+                'attr': {
+                    'class': 'form-birthday'
+                }
+            })}}
+
+            <div class="form-one-complete-user-flex">
+                    {{ form_row(form.adress, { 'label' : 'Votre adresse: '}) }}
+                {{ form_row(form.picture, { 'label' : 'Ajoutez une image: ',
+                    'attr': {
+                        'class': 'form-picture'
+                    }
+                }) }}
+            </div>
+        {{ form_row(form.bio, { 'label' : 'Description: ',
+            'attr': {
+                'class': 'form-bio'
+            }
+        }) }}
+        {{ form_row(form.submit, { 'label': 'Envoyer'}) }}
+
+        {{ form_end(form) }}
+    </div>
+</section>

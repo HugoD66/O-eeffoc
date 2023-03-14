@@ -1,0 +1,51 @@
+<section>
+        <!-- Code pour desktop -->
+        <div class="messagerie">
+            <h1>Messagerie</h1>
+            <h2>Boite de reception</h2>
+            <h3>Messages non-lus</h3>
+            {% set unread = "" %}
+            <div class="list-cards">
+            {% for message in app.user.received %}
+            {% if message.isRead == 0 %}
+            {% set unread = "unread" %}
+            <div class="card card-unread {{ unread }}">
+                <div class="card-body">
+                    <img src="{{ asset('images/recipe-picture/' ~ message.sender.getPicture()) }}" alt="Photo de post.">
+                    <h6 class="card-subtitle title">{{ message.sender.username }}</h6>
+                    <a href="{{ path('readone', { 'message_id' : message.id, 'user_id' : user.id }) }}" class="card-link">Lire</a>
+                </div>
+            </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <div class="button-list received">
+                <button type="button" class="customButton2">
+                    <a href="{{ path('send', { 'id' : app.user.id }) }}">Envoyer</a>
+                </button>
+                <button type="button" class="customButton2">
+                    <a href="{{ path('app_messenger', { 'id' : app.user.id }) }}">Retour</a>
+                </button>
+            </div>
+            <h3>Messages lus </h3>
+            <div class="custom-card">
+            {% for message in app.user.received %}
+            {% if message.isRead == 1 %}
+            {% set unread = "" %}
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ asset('images/recipe-picture/' ~ message.sender.getPicture()) }}" alt="Photo de post.">
+
+                        <h5 class="card-title">{{ message.title }}</h5>
+                        <h6 class="card-subtitle mb-2 dequicestquoi text-muted">{{ message.sender.username }}</h6>
+
+                        <p class="card-text content">{{ message.message|u.truncate(250) }}</p>
+                        <p class="card-text date"><i>{{ message.createdAt|date }}</i></p>
+                        <a href="{{ path('send', {'id' : app.user.id}) }}" class="card-link customButton3">Répondre</a>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+            </div>
+        </div>
+</section>

@@ -1,0 +1,5 @@
+{% for user in this.AllUsers %}
+    {{ component('user', {
+        id: user.id
+    }) }}
+{% endfor %}

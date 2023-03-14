@@ -1,0 +1,77 @@
+<aside>
+    <!-- Contacts, searchbar ... -->
+    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
+        <!-- Code pour les appareils mobiles -->
+    {% else %}
+        <!-- Code pour desktop -->
+        <div class="aside-desktop">
+            {% if not user  %}
+            {% else %}
+                {{ component('user_search') }}
+            {% endif %}
+        </div>
+    {% endif %}
+</aside>
+<script>
+    const followButtons = document.querySelectorAll('.follow-button');
+
+    followButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const userId = button.dataset.userId;
+            fetch(`/O-eeffoc/follow-user/${userId}`, { method: 'POST', headers: {'Content-Type': 'application/json'} })
+                .then(response => {
+                    if (response.ok) {
+                        button.classList.add('liked');
+                        const unfollowButton = button.nextElementSibling;
+                        unfollowButton.classList.remove('liked');
+                        const followImage = button.querySelector('.follow-image');
+                        followImage.classList.add('clicked');
+
+                        const successMessage = document.getElementById('success-message-async');
+                        successMessage.classList.add('success-message');
+                        successMessage.innerText = 'Followed';
+                        successMessage.style.animation = 'fade-out 2s forwards';
+
+                        setTimeout(() => {
+                            successMessage.classList.remove('success-message');
+                            successMessage.innerText = ' ';
+                            successMessage.style.animation = '';
+                        }, 1500);
+                    } else {
+                        alert('Erreur au suivit de l\'utilisateur');
+                    }
+                });
+        });
+    });
+
+    const unfollowButtons = document.querySelectorAll('.unfollow-button');
+
+    unfollowButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const userId = button.dataset.userId;
+            fetch(`/O-eeffoc/unfollow-user/${userId}`, { method: 'POST', headers: {'Content-Type': 'application/json'} })
+                .then(response => {
+                    if (response.ok) {
+                        const followButton = button.previousElementSibling;
+                        followButton.classList.remove('liked');
+                        button.classList.add('liked');
+                        const followImage = followButton.querySelector('.follow-image');
+                        followImage.classList.remove('clicked');
+
+                        const successMessage = document.getElementById('success-message-async');
+                        successMessage.classList.add('success-message');
+                        successMessage.innerText = 'Unfollowed';
+                        successMessage.style.animation = 'fade-out 2s forwards';
+
+                        setTimeout(() => {
+                            successMessage.classList.remove('success-message');
+                            successMessage.innerText = ' ';
+                            successMessage.style.animation = '';
+                        }, 1500);
+                    } else {
+                        alert('Erreur au dé-suivit de l\'utilisateur');
+                    }
+                });
+        });
+    });
+</script>

@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ title }} {% endblock %}
+
+{% block body %}
+<div class="full-screen">
+    <h1 id="titrePrincipal" class="titrePrincipal">O-eeffoC</h1>
+    <div class="buttons-select">
+        {% for message in app.flashes('success') %}
+            <div class="alert alert-success success-home">
+                {{ message }}
+            </div>
+        {% endfor %}
+            <button id="boutonModale1" class="buttonRegister">Inscription
+                {% if registrationFailed %}
+                    <span class="registration-failed-icon" style="color: red;">&#x2717;</span>
+                {% endif %}</button>
+            <button type="button" class="buttonDejaInscrit">
+                <a href="{{ path('app_actu') }}">
+                    Déjà inscrit ?
+                </a>
+            </button>
+        {% for flash_message in app.flashes('error') %}
+            <div class="alert alert-danger" role="alert">{{ flash_message }}</div>
+        {% endfor %}
+    </div>
+</div>
+    <!-- Modale register -->
+    <div id="modale1" class="modale">
+        <div class="customFormRegister">
+            {{ form_start(registrationForm, {'attr': {'id': 'registration-form'}}) }}
+            {{ form_row(registrationForm.email, { 'label' : 'Adresse mail '}) }}
+            {{ form_row(registrationForm.username, { 'label' : 'Identifiant '}) }}
+            {{ form_row(registrationForm.plainPassword, {
+                    label: 'Mot de passe'
+            }) }}
+            <div class="agree-terms">
+                {{ form_row(registrationForm.agreeTerms, { 'label' : 'Accepter les termes'}) }}
+            </div>
+            <div class="buttonsRegister">
+                {{ form_row(registrationForm.submit, { 'label': 'Envoyer', 'attr': {'onclick': 'return showConfirm();'} }) }}
+                <div>
+                    <button class="fermer customButton1">Annuler</button>
+                </div>
+            </div>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+    <div id="backgroundModales"></div>
+    <script>
+        function showConfirm() {
+            let confirmation = confirm("Voulez vous vous enregistrer ?");
+            if (confirmation === true) {
+                alert("Bonne aventure parmis nous ! ");
+                return true;
+            } else {
+                alert("Opération annulée");
+                return false;
+            }
+        }
+    </script>
+{% endblock %}

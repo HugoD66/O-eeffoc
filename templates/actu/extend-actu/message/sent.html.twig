@@ -1,0 +1,23 @@
+<section>
+    <div class="messagerie">
+        <h1>Messagerie</h1>
+        <h2>Envoyés</h2>
+        <div class="custom-card">
+        {% for message in messages %}
+            {% if message.sender == user %}
+                <div class="card">
+                    <div class="card-body">
+                        <img src="{{ asset('images/recipe-picture/' ~ message.recipient.getPicture()) }}" alt="Photo de post.">
+
+                        <h5 class="card-title">{{ message.title }}</h5>
+                        <h6 class="card-subtitle mb-2 dequicestquoi text-muted">{{ message.recipient.username }}</h6>
+                        <p class="card-text content">{{ message.message|u.truncate(250) }}</p>
+                        <p class="card-text date"><i>{{ message.createdAt|date }}</i></p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+</section>
+
