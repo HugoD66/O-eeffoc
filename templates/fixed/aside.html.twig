@@ -1,9 +1,6 @@
 <aside>
-    <!-- Contacts, searchbar ... -->
     {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
-        <!-- Code pour les appareils mobiles -->
     {% else %}
-        <!-- Code pour desktop -->
         <div class="aside-desktop">
             {% if not user  %}
             {% else %}

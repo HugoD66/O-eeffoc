@@ -1,10 +1,7 @@
 <div class="post-list">
     <h1>{{ this.post.title }}</h1>
     <div class="post-title-desc">
-        {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
-        {% else %}
             <h3>Description</h3>
-        {% endif %}
         <p>{{ this.post.description }}</p>
     </div>
     <img src="{{ asset('images/recipe-picture/' ~ this.post.getPicture()) }}" alt="Photo de post.">

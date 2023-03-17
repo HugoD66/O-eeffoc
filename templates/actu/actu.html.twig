@@ -32,7 +32,6 @@
                 {% include 'actu/extend-actu/message/sent.html.twig' %}
             {% elseif app.request.getPathInfo() == '/O-eeffoc/Messagerie-utilisateur/recus/' ~ user_id ~ '/' ~ message.id %}
                 {% include 'actu/extend-actu/message/read.html.twig' %}
-
             {% endif %}
         {% endif %}
         {% include 'fixed/aside.html.twig' %}

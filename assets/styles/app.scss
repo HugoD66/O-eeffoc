@@ -348,6 +348,8 @@ html, body {
                 }
             }
         }
+
+
         section {
             position: fixed;
             top: 375px;
@@ -360,6 +362,133 @@ html, body {
             height: auto;
             min-height: 800px;
             border-radius: 5px;
+            .section-mobile {
+                padding: 10px;
+                .gestion-user {
+                    width: 100%;
+                    .gestion-user-title {
+                        width: 100%;
+                        text-align: end;
+                        h2 {
+                            font-family: $title;
+                            font-size: 10em;
+                        }
+                        h3 {
+                            font-family: $title;
+                            font-size: 4em;
+                        }
+                    }
+                    .gestion-user-buttons {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-around;
+                        margin: 3vh auto auto;
+                        width: 100%;
+
+                        a {
+                            font-size: 1.5em;
+                            text-decoration: none;
+                            color: $marron4;
+                        }
+                    }
+                    .gestion-user-title-buttons-three {
+                        margin-top: 1vh;
+                        h3 {
+                            display: inline-block;
+                            margin-top: 4vh;
+                            font-family: $text2;
+                            text-decoration: underline;
+                            text-underline: 1px solid $marron0;
+                            color: $marron5;
+                            font-size: 2.5em;
+                            margin-right: 2%;
+                        }
+                        button {
+                            display: inline-block;
+                            margin-right: 4%;
+                            border-radius: 90%;
+                            a {
+                                font-family: $button1;
+                                text-decoration: none;
+                                color: $blue4;
+                                margin: auto;
+                                font-size: 1.3em;
+
+                            }
+                        }
+                    }
+                }
+                .post-list {
+                    position: relative;
+                    width: 100%;
+                    margin: 2%;
+                    height: auto;
+                    background: linear-gradient(90deg, hsla(196, 52%, 48%, 1) 0%, hsla(21, 100%, 87%, 1) 100%);
+                    border-radius: 66% 34% 79% 21% / 30% 70% 30% 70%;
+                    h1 {
+                        margin-right: 10%;
+                        margin-top: 5%;
+                        font-family: $title;
+                        color: $marron4;
+                        text-align: end;
+                    }
+                    img {
+                        border-radius: 3px;
+                        max-width: 75%;
+                        margin-left: 3%;
+                        margin-bottom: 3%;
+                        box-shadow: 0 0 18px 1px #000000;
+                        max-height: 95%;
+                        object-fit: cover;
+                    }
+                    .post-title-desc {
+                        position: absolute;
+                        background-color: white;
+                        border: 2px solid $blue5;
+                        height: auto;
+                        margin-top: 850px;
+                        bottom: 0;
+                        width: 60%;
+                        border-radius: 10px;
+                        h3 {
+                            padding: 8px;
+                            margin-bottom: 1%;
+                            font-family: $title;
+                            color: $blue5;
+                        }
+                        p {
+                            text-align: justify;
+                            padding: 4px;
+                            margin-top: 1%;
+                            font-family: Constantia, cursive;
+                            font-size: 1.5em;
+                        }
+                    }
+                    ul {
+                        position: absolute;
+                        right: 5%;
+                        bottom: 10%;
+                        list-style-type: none;
+                        line-height: 2.2em;
+                        li {
+                            text-align: end;
+                            font-size: 2em;
+                            font-family: Constantia, cursive;
+                        }
+                    }
+                    button {
+                        position: absolute;
+                        background-color: transparent;
+                        right: 2%;
+                        top: 25%;
+                        border: none;
+                        img {
+                            border-radius: 90%;
+                            width: 15vw;
+                        }
+                    }
+                }
+            }
             @media (min-width: 1000px) {
                 left: 50%;
                 transform: translateX(-50%);
@@ -367,7 +496,125 @@ html, body {
                 top: 18vh;
                 height: 2000px;
                 min-height: 78vh;
+                .section-mobile {
+                    display: none;
+                }
+                .section-desktop {
+                    border-radius: 5px;
+                    border-color: $marron0;
+                    .gestion-user-desktop {
+                        height: 100%;
+                        width: 100%;
+                        /* Page de gestion */
+                        .gestion-user-desktop-buttons-title {
+                            display: flex;
+                            margin: auto;
+                            align-items: center;
+                            justify-content: space-around;
+                            h2 {
+                                font-family: $title;
+                                font-size: 4em;
+                                text-align: center;
+                            }
+                            a {
+                                text-decoration: none;
+                                color: $marron4;
+                            }
+                        }
+                        .gestion-user-post-titl-button {
+                            h3 {
+                                display: inline-block;
+                                margin-left: 4vh;
+                                font-family: $text2;
+                                text-decoration: underline;
+                                text-underline: 1px solid $marron0;
+                                color: $marron5;
+                                font-size: 2.2em;
+                                margin-right: 2%;
+                                margin-bottom: 3%;
+                            }
+                            button {
+                                display: inline-block;
+                                margin-right: 4%;
+                                border-radius: 90%;
+                                a {
+                                    font-family: $button1;
+                                    text-decoration: none;
+                                    color: $blue4;
+                                    margin: auto;
+                                }
+                            }
+                        }
+                    }
+                    /* Component POST (Actu) Desktop */
+                    .post-list {
+                        position: relative;
+                        width : 95%;
+                        margin: 2%;
+                        height: auto;
+                        background: linear-gradient(90deg, hsla(196, 52%, 48%, 1) 0%, hsla(21, 100%, 87%, 1) 100%);
+                        border-radius: 5px 20% 5px 5px;
+                        h1 {
+                            margin-left: 5%;
+                            font-family: $title;
+                            color: $marron5;
+                        }
+                        img {
+                            border-radius: 3px;
+                            max-width: 37vw;   // Limites de sa taille
+                            margin-left: 3%;
+                            margin-bottom: 3%;
+                            box-shadow: 0 0 18px 1px #000000;
+                            max-height: 95%;
+                            object-fit: cover;
+                        }
+                        .post-title-desc {
+                            position: absolute;
+                            background-color: white;
+                            border: 2px solid $blue5;
+                            right: 0;
+                            top: 0;
+                            height: auto;
+                            width: 32%;
+                            border-radius: 5px 50px  5px 5px;
+                            h3 {
+                                text-align: start;
+                                padding: 8px;
+                                margin-bottom: 1%;
+                                font-family: $title;
+                                color: $blue5;
+                            }
+                            p {
+                                text-align: justify;
+                                padding: 8px;
+                                font-family: Constantia, cursive;
+                            }
+                        }
+                        ul {
+                            position: absolute;
+                            right: 7%;
+                            bottom: 15%;
+                            list-style-type: none;
+                            li {
+                                font-family: Constantia, cursive;
+                                text-align: justify;
+                            }
+                        }
+                        button {
+                            position: absolute;
+                            border:none;
+                            border-radius: 90%;
+                            background-color: transparent;
+                            bottom: 7%;
+                            left: 3%;
+                            img {
+                                border-radius: 90%;
+                            }
+                        }
+                    }
+                }
             }
+
     /* Same pour les Deux  */
             .redirect-succes {
                 display: flex;
@@ -888,248 +1135,6 @@ html, body {
     /* Fin de Same ! */
 
 
-            .section-mobile {
-                padding: 10px;
-                .gestion-user {
-                    width: 100%;
-                    .gestion-user-title {
-                        width: 100%;
-
-                        text-align: end;
-                        h2 {
-                            font-family: $title;
-                            font-size: 10em;
-                        }
-                        h3 {
-                            font-family: $title;
-                            font-size: 4em;
-                        }
-                    }
-                    .gestion-user-buttons {
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-around;
-                        margin: 3vh auto auto;
-                        width: 100%;
-
-                        a {
-                            font-size: 1.5em;
-                            text-decoration: none;
-                            color: $marron4;
-                        }
-                    }
-                    .gestion-user-title-buttons-three {
-                        margin-top: 1vh;
-                        h3 {
-                            display: inline-block;
-                            margin-top: 4vh;
-                            font-family: $text2;
-                            text-decoration: underline;
-                            text-underline: 1px solid $marron0;
-                            color: $marron5;
-                            font-size: 2.5em;
-                            margin-right: 2%;
-                        }
-                        button {
-                            display: inline-block;
-                            margin-right: 4%;
-                            border-radius: 90%;
-                            a {
-                                font-family: $button1;
-                                text-decoration: none;
-                                color: $blue4;
-                                margin: auto;
-                                font-size: 1.3em;
-
-                            }
-                        }
-                    }
-                }
-                .post-list {
-                    position: relative;
-                    width: 100%;
-                    margin: 2%;
-                    height: auto;
-                    background: linear-gradient(90deg, hsla(196, 52%, 48%, 1) 0%, hsla(21, 100%, 87%, 1) 100%);
-                    border-radius: 66% 34% 79% 21% / 30% 70% 30% 70%;
-                    h1 {
-                        margin-right: 10%;
-                        margin-top: 5%;
-                        font-family: $title;
-                        color: $marron4;
-                        text-align: end;
-                    }
-                    img {
-                        border-radius: 3px;
-                        max-width: 75%;
-                        margin-left: 3%;
-                        margin-bottom: 3%;
-                        box-shadow: 0 0 18px 1px #000000;
-                        max-height: 95%;
-                        object-fit: cover;
-                    }
-                    .post-title-desc {
-                        position: absolute;
-                        background-color: white;
-                        border: 2px solid $blue5;
-                        height: auto;
-                        margin-top: 850px;
-                        bottom: 0;
-                        width: 60%;
-                        border-radius: 10px;
-                        h3 {
-                            padding: 8px;
-                            margin-bottom: 1%;
-                            font-family: $title;
-                            color: $blue5;
-                        }
-                        p {
-                            text-align: justify;
-                            padding: 4px;
-                            margin-top: 1%;
-                            font-family: Constantia, cursive;
-                            font-size: 1.5em;
-                        }
-                    }
-                    ul {
-                        position: absolute;
-                        right: 5%;
-                        bottom: 10%;
-                        list-style-type: none;
-                        line-height: 2.2em;
-                        li {
-                            text-align: end;
-                            font-size: 2em;
-                            font-family: Constantia, cursive;
-                        }
-                    }
-                    button {
-                        position: absolute;
-                        background-color: transparent;
-                        right: 2%;
-                        top: 25%;
-                        border: none;
-                        img {
-                            border-radius: 90%;
-                            width: 15vw;
-                        }
-                    }
-                }
-            }
-            .section-desktop {
-                border-radius: 5px;
-                border-color: $marron0;
-                .gestion-user-desktop {
-                    height: 100%;
-                    width: 100%;
-                    /* Page de gestion */
-                    .gestion-user-desktop-buttons-title {
-                        display: flex;
-                        margin: auto;
-                        align-items: center;
-                        justify-content: space-around;
-                        h2 {
-                            font-family: $title;
-                            font-size: 4em;
-                            text-align: center;
-                        }
-                        a {
-                            text-decoration: none;
-                            color: $marron4;
-                        }
-                    }
-                    .gestion-user-post-titl-button {
-                        h3 {
-                            display: inline-block;
-                            margin-left: 4vh;
-                            font-family: $text2;
-                            text-decoration: underline;
-                            text-underline: 1px solid $marron0;
-                            color: $marron5;
-                            font-size: 2.2em;
-                            margin-right: 2%;
-                            margin-bottom: 3%;
-                        }
-                        button {
-                            display: inline-block;
-                            margin-right: 4%;
-                            border-radius: 90%;
-                            a {
-                                font-family: $button1;
-                                text-decoration: none;
-                                color: $blue4;
-                                margin: auto;
-                            }
-                        }
-                    }
-                }
-                /* Component POST (Actu) Desktop */
-                .post-list {
-                    position: relative;
-                    width : 95%;
-                    margin: 2%;
-                    height: auto;
-                    background: linear-gradient(90deg, hsla(196, 52%, 48%, 1) 0%, hsla(21, 100%, 87%, 1) 100%);
-                    border-radius: 5px 20% 5px 5px;
-                    h1 {
-                        margin-left: 5%;
-                        font-family: $title;
-                        color: $marron5;
-                    }
-                    img {
-                        border-radius: 3px;
-                        max-width: 37vw;   // Limites de sa taille
-                        margin-left: 3%;
-                        margin-bottom: 3%;
-                        box-shadow: 0 0 18px 1px #000000;
-                        max-height: 95%;
-                        object-fit: cover;
-                    }
-                    .post-title-desc {
-                        position: absolute;
-                        background-color: white;
-                        border: 2px solid $blue5;
-                        right: 0;
-                        top: 0;
-                        height: auto;
-                        width: 32%;
-                        border-radius: 5px 50px  5px 5px;
-                        h3 {
-                            text-align: start;
-                            padding: 8px;
-                            margin-bottom: 1%;
-                            font-family: $title;
-                            color: $blue5;
-                        }
-                        p {
-                            text-align: justify;
-                            padding: 8px;
-                            font-family: Constantia, cursive;
-                        }
-                    }
-                    ul {
-                        position: absolute;
-                        right: 7%;
-                        bottom: 15%;
-                        list-style-type: none;
-                        li {
-                            font-family: Constantia, cursive;
-                            text-align: justify;
-                        }
-                    }
-                    button {
-                        position: absolute;
-                        border:none;
-                        border-radius: 90%;
-                        background-color: transparent;
-                        bottom: 7%;
-                        left: 3%;
-                        img {
-                            border-radius: 90%;
-                        }
-                    }
-                }
-            }
         }
 
         footer {

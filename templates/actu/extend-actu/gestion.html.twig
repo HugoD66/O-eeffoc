@@ -1,7 +1,4 @@
 <section>
-<!-- gros bloc body, avec les news-->
-    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
-        <!-- Code pour les appareils mobiles -->
         <div class="section-mobile">
             <div class="gestion-user">
                 <div class="gestion-user-title">
@@ -82,8 +79,6 @@
                 </div>
             </div>
         </div>
-    {% else %}
-        <!-- Code pour desktop -->
         <div class="section-desktop">
             <div class="gestion-user-desktop">
                 <div class="gestion-user-desktop-buttons-title">
@@ -155,10 +150,8 @@
                             </div>
                         {% endfor %}
                         {% endif %}
-
                     </div>
                 </div>
             </div>
         </div>
-    {% endif %}
 </section>

@@ -1,16 +1,8 @@
 <section>
-    <!-- gros bloc body, avec les news-->
-    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
-        <!-- Code pour les appareils mobiles -->
         <div class="section-mobile">
             {{ component('all_posts') }}
         </div>
-    {% else %}
-        <!-- Code pour desktop -->
         <div class="section-desktop">
             {{ component('all_posts') }}
         </div>
-    {% endif %}
-
-
 </section>

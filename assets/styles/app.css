@@ -21916,6 +21916,131 @@ html .actu-screen section, body .actu-screen section {
   /* Liste des followers dans la page actu*/
   /* Fin de Same ! */
 }
+html .actu-screen section .section-mobile, body .actu-screen section .section-mobile {
+  padding: 10px;
+}
+html .actu-screen section .section-mobile .gestion-user, body .actu-screen section .section-mobile .gestion-user {
+  width: 100%;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title, body .actu-screen section .section-mobile .gestion-user .gestion-user-title {
+  width: 100%;
+  text-align: end;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2 {
+  font-family: "Tilt Neon", cursive;
+  font-size: 10em;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title h3, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h3 {
+  font-family: "Tilt Neon", cursive;
+  font-size: 4em;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-buttons, body .actu-screen section .section-mobile .gestion-user .gestion-user-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 3vh auto auto;
+  width: 100%;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-buttons a, body .actu-screen section .section-mobile .gestion-user .gestion-user-buttons a {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #411a04;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three {
+  margin-top: 1vh;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three h3, html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three .h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three .h3 {
+  display: inline-block;
+  margin-top: 4vh;
+  font-family: Consolas, serif;
+  text-decoration: underline;
+  text-underline: 1px solid #FFD4BC;
+  color: #260f01;
+  font-size: 2.5em;
+  margin-right: 2%;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button {
+  display: inline-block;
+  margin-right: 4%;
+  border-radius: 90%;
+}
+html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button a, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button a {
+  font-family: "JetBrains Mono", monospace;
+  text-decoration: none;
+  color: #1A6289;
+  margin: auto;
+  font-size: 1.3em;
+}
+html .actu-screen section .section-mobile .post-list, body .actu-screen section .section-mobile .post-list {
+  position: relative;
+  width: 100%;
+  margin: 2%;
+  height: auto;
+  background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
+  border-radius: 66% 34% 79% 21%/30% 70% 30% 70%;
+}
+html .actu-screen section .section-mobile .post-list h1, html .actu-screen section .section-mobile .post-list .h1, body .actu-screen section .section-mobile .post-list h1, body .actu-screen section .section-mobile .post-list .h1 {
+  margin-right: 10%;
+  margin-top: 5%;
+  font-family: "Tilt Neon", cursive;
+  color: #411a04;
+  text-align: end;
+}
+html .actu-screen section .section-mobile .post-list img, body .actu-screen section .section-mobile .post-list img {
+  border-radius: 3px;
+  max-width: 75%;
+  margin-left: 3%;
+  margin-bottom: 3%;
+  box-shadow: 0 0 18px 1px #000000;
+  max-height: 95%;
+  object-fit: cover;
+}
+html .actu-screen section .section-mobile .post-list .post-title-desc, body .actu-screen section .section-mobile .post-list .post-title-desc {
+  position: absolute;
+  background-color: white;
+  border: 2px solid #113C54;
+  height: auto;
+  margin-top: 850px;
+  bottom: 0;
+  width: 60%;
+  border-radius: 10px;
+}
+html .actu-screen section .section-mobile .post-list .post-title-desc h3, html .actu-screen section .section-mobile .post-list .post-title-desc .h3, body .actu-screen section .section-mobile .post-list .post-title-desc h3, body .actu-screen section .section-mobile .post-list .post-title-desc .h3 {
+  padding: 8px;
+  margin-bottom: 1%;
+  font-family: "Tilt Neon", cursive;
+  color: #113C54;
+}
+html .actu-screen section .section-mobile .post-list .post-title-desc p, body .actu-screen section .section-mobile .post-list .post-title-desc p {
+  text-align: justify;
+  padding: 4px;
+  margin-top: 1%;
+  font-family: Constantia, cursive;
+  font-size: 1.5em;
+}
+html .actu-screen section .section-mobile .post-list ul, body .actu-screen section .section-mobile .post-list ul {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  list-style-type: none;
+  line-height: 2.2em;
+}
+html .actu-screen section .section-mobile .post-list ul li, body .actu-screen section .section-mobile .post-list ul li {
+  text-align: end;
+  font-size: 2em;
+  font-family: Constantia, cursive;
+}
+html .actu-screen section .section-mobile .post-list button, body .actu-screen section .section-mobile .post-list button {
+  position: absolute;
+  background-color: transparent;
+  right: 2%;
+  top: 25%;
+  border: none;
+}
+html .actu-screen section .section-mobile .post-list button img, body .actu-screen section .section-mobile .post-list button img {
+  border-radius: 90%;
+  width: 15vw;
+}
 @media (min-width: 1000px) {
   html .actu-screen section, body .actu-screen section {
     left: 50%;
@@ -21924,6 +22049,121 @@ html .actu-screen section, body .actu-screen section {
     top: 18vh;
     height: 2000px;
     min-height: 78vh;
+  }
+  html .actu-screen section .section-mobile, body .actu-screen section .section-mobile {
+    display: none;
+  }
+  html .actu-screen section .section-desktop, body .actu-screen section .section-desktop {
+    border-radius: 5px;
+    border-color: #FFD4BC;
+    /* Component POST (Actu) Desktop */
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop, body .actu-screen section .section-desktop .gestion-user-desktop {
+    height: 100%;
+    width: 100%;
+    /* Page de gestion */
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title {
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2 {
+    font-family: "Tilt Neon", cursive;
+    font-size: 4em;
+    text-align: center;
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a {
+    text-decoration: none;
+    color: #411a04;
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3 {
+    display: inline-block;
+    margin-left: 4vh;
+    font-family: Consolas, serif;
+    text-decoration: underline;
+    text-underline: 1px solid #FFD4BC;
+    color: #260f01;
+    font-size: 2.2em;
+    margin-right: 2%;
+    margin-bottom: 3%;
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button {
+    display: inline-block;
+    margin-right: 4%;
+    border-radius: 90%;
+  }
+  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a {
+    font-family: "JetBrains Mono", monospace;
+    text-decoration: none;
+    color: #1A6289;
+    margin: auto;
+  }
+  html .actu-screen section .section-desktop .post-list, body .actu-screen section .section-desktop .post-list {
+    position: relative;
+    width: 95%;
+    margin: 2%;
+    height: auto;
+    background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
+    border-radius: 5px 20% 5px 5px;
+  }
+  html .actu-screen section .section-desktop .post-list h1, html .actu-screen section .section-desktop .post-list .h1, body .actu-screen section .section-desktop .post-list h1, body .actu-screen section .section-desktop .post-list .h1 {
+    margin-left: 5%;
+    font-family: "Tilt Neon", cursive;
+    color: #260f01;
+  }
+  html .actu-screen section .section-desktop .post-list img, body .actu-screen section .section-desktop .post-list img {
+    border-radius: 3px;
+    max-width: 37vw;
+    margin-left: 3%;
+    margin-bottom: 3%;
+    box-shadow: 0 0 18px 1px #000000;
+    max-height: 95%;
+    object-fit: cover;
+  }
+  html .actu-screen section .section-desktop .post-list .post-title-desc, body .actu-screen section .section-desktop .post-list .post-title-desc {
+    position: absolute;
+    background-color: white;
+    border: 2px solid #113C54;
+    right: 0;
+    top: 0;
+    height: auto;
+    width: 32%;
+    border-radius: 5px 50px 5px 5px;
+  }
+  html .actu-screen section .section-desktop .post-list .post-title-desc h3, html .actu-screen section .section-desktop .post-list .post-title-desc .h3, body .actu-screen section .section-desktop .post-list .post-title-desc h3, body .actu-screen section .section-desktop .post-list .post-title-desc .h3 {
+    text-align: start;
+    padding: 8px;
+    margin-bottom: 1%;
+    font-family: "Tilt Neon", cursive;
+    color: #113C54;
+  }
+  html .actu-screen section .section-desktop .post-list .post-title-desc p, body .actu-screen section .section-desktop .post-list .post-title-desc p {
+    text-align: justify;
+    padding: 8px;
+    font-family: Constantia, cursive;
+  }
+  html .actu-screen section .section-desktop .post-list ul, body .actu-screen section .section-desktop .post-list ul {
+    position: absolute;
+    right: 7%;
+    bottom: 15%;
+    list-style-type: none;
+  }
+  html .actu-screen section .section-desktop .post-list ul li, body .actu-screen section .section-desktop .post-list ul li {
+    font-family: Constantia, cursive;
+    text-align: justify;
+  }
+  html .actu-screen section .section-desktop .post-list button, body .actu-screen section .section-desktop .post-list button {
+    position: absolute;
+    border: none;
+    border-radius: 90%;
+    background-color: transparent;
+    bottom: 7%;
+    left: 3%;
+  }
+  html .actu-screen section .section-desktop .post-list button img, body .actu-screen section .section-desktop .post-list button img {
+    border-radius: 90%;
   }
 }
 html .actu-screen section .redirect-succes, body .actu-screen section .redirect-succes {
@@ -22448,243 +22688,6 @@ html .actu-screen section .messagerie .form-two-send-message .list-button-form b
 html .actu-screen section .messagerie .form-two-send-message .list-button-form button a, body .actu-screen section .messagerie .form-two-send-message .list-button-form button a {
   color: black;
   text-decoration: none;
-}
-html .actu-screen section .section-mobile, body .actu-screen section .section-mobile {
-  padding: 10px;
-}
-html .actu-screen section .section-mobile .gestion-user, body .actu-screen section .section-mobile .gestion-user {
-  width: 100%;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title, body .actu-screen section .section-mobile .gestion-user .gestion-user-title {
-  width: 100%;
-  text-align: end;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2 {
-  font-family: "Tilt Neon", cursive;
-  font-size: 10em;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title h3, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h3 {
-  font-family: "Tilt Neon", cursive;
-  font-size: 4em;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-buttons, body .actu-screen section .section-mobile .gestion-user .gestion-user-buttons {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 3vh auto auto;
-  width: 100%;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-buttons a, body .actu-screen section .section-mobile .gestion-user .gestion-user-buttons a {
-  font-size: 1.5em;
-  text-decoration: none;
-  color: #411a04;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three {
-  margin-top: 1vh;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three h3, html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three .h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three .h3 {
-  display: inline-block;
-  margin-top: 4vh;
-  font-family: Consolas, serif;
-  text-decoration: underline;
-  text-underline: 1px solid #FFD4BC;
-  color: #260f01;
-  font-size: 2.5em;
-  margin-right: 2%;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button {
-  display: inline-block;
-  margin-right: 4%;
-  border-radius: 90%;
-}
-html .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button a, body .actu-screen section .section-mobile .gestion-user .gestion-user-title-buttons-three button a {
-  font-family: "JetBrains Mono", monospace;
-  text-decoration: none;
-  color: #1A6289;
-  margin: auto;
-  font-size: 1.3em;
-}
-html .actu-screen section .section-mobile .post-list, body .actu-screen section .section-mobile .post-list {
-  position: relative;
-  width: 100%;
-  margin: 2%;
-  height: auto;
-  background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
-  border-radius: 66% 34% 79% 21%/30% 70% 30% 70%;
-}
-html .actu-screen section .section-mobile .post-list h1, html .actu-screen section .section-mobile .post-list .h1, body .actu-screen section .section-mobile .post-list h1, body .actu-screen section .section-mobile .post-list .h1 {
-  margin-right: 10%;
-  margin-top: 5%;
-  font-family: "Tilt Neon", cursive;
-  color: #411a04;
-  text-align: end;
-}
-html .actu-screen section .section-mobile .post-list img, body .actu-screen section .section-mobile .post-list img {
-  border-radius: 3px;
-  max-width: 75%;
-  margin-left: 3%;
-  margin-bottom: 3%;
-  box-shadow: 0 0 18px 1px #000000;
-  max-height: 95%;
-  object-fit: cover;
-}
-html .actu-screen section .section-mobile .post-list .post-title-desc, body .actu-screen section .section-mobile .post-list .post-title-desc {
-  position: absolute;
-  background-color: white;
-  border: 2px solid #113C54;
-  height: auto;
-  margin-top: 850px;
-  bottom: 0;
-  width: 60%;
-  border-radius: 10px;
-}
-html .actu-screen section .section-mobile .post-list .post-title-desc h3, html .actu-screen section .section-mobile .post-list .post-title-desc .h3, body .actu-screen section .section-mobile .post-list .post-title-desc h3, body .actu-screen section .section-mobile .post-list .post-title-desc .h3 {
-  padding: 8px;
-  margin-bottom: 1%;
-  font-family: "Tilt Neon", cursive;
-  color: #113C54;
-}
-html .actu-screen section .section-mobile .post-list .post-title-desc p, body .actu-screen section .section-mobile .post-list .post-title-desc p {
-  text-align: justify;
-  padding: 4px;
-  margin-top: 1%;
-  font-family: Constantia, cursive;
-  font-size: 1.5em;
-}
-html .actu-screen section .section-mobile .post-list ul, body .actu-screen section .section-mobile .post-list ul {
-  position: absolute;
-  right: 5%;
-  bottom: 10%;
-  list-style-type: none;
-  line-height: 2.2em;
-}
-html .actu-screen section .section-mobile .post-list ul li, body .actu-screen section .section-mobile .post-list ul li {
-  text-align: end;
-  font-size: 2em;
-  font-family: Constantia, cursive;
-}
-html .actu-screen section .section-mobile .post-list button, body .actu-screen section .section-mobile .post-list button {
-  position: absolute;
-  background-color: transparent;
-  right: 2%;
-  top: 25%;
-  border: none;
-}
-html .actu-screen section .section-mobile .post-list button img, body .actu-screen section .section-mobile .post-list button img {
-  border-radius: 90%;
-  width: 15vw;
-}
-html .actu-screen section .section-desktop, body .actu-screen section .section-desktop {
-  border-radius: 5px;
-  border-color: #FFD4BC;
-  /* Component POST (Actu) Desktop */
-}
-html .actu-screen section .section-desktop .gestion-user-desktop, body .actu-screen section .section-desktop .gestion-user-desktop {
-  height: 100%;
-  width: 100%;
-  /* Page de gestion */
-}
-html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title {
-  display: flex;
-  margin: auto;
-  align-items: center;
-  justify-content: space-around;
-}
-html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2 {
-  font-family: "Tilt Neon", cursive;
-  font-size: 4em;
-  text-align: center;
-}
-html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a {
-  text-decoration: none;
-  color: #411a04;
-}
-html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3 {
-  display: inline-block;
-  margin-left: 4vh;
-  font-family: Consolas, serif;
-  text-decoration: underline;
-  text-underline: 1px solid #FFD4BC;
-  color: #260f01;
-  font-size: 2.2em;
-  margin-right: 2%;
-  margin-bottom: 3%;
-}
-html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button {
-  display: inline-block;
-  margin-right: 4%;
-  border-radius: 90%;
-}
-html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a {
-  font-family: "JetBrains Mono", monospace;
-  text-decoration: none;
-  color: #1A6289;
-  margin: auto;
-}
-html .actu-screen section .section-desktop .post-list, body .actu-screen section .section-desktop .post-list {
-  position: relative;
-  width: 95%;
-  margin: 2%;
-  height: auto;
-  background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
-  border-radius: 5px 20% 5px 5px;
-}
-html .actu-screen section .section-desktop .post-list h1, html .actu-screen section .section-desktop .post-list .h1, body .actu-screen section .section-desktop .post-list h1, body .actu-screen section .section-desktop .post-list .h1 {
-  margin-left: 5%;
-  font-family: "Tilt Neon", cursive;
-  color: #260f01;
-}
-html .actu-screen section .section-desktop .post-list img, body .actu-screen section .section-desktop .post-list img {
-  border-radius: 3px;
-  max-width: 37vw;
-  margin-left: 3%;
-  margin-bottom: 3%;
-  box-shadow: 0 0 18px 1px #000000;
-  max-height: 95%;
-  object-fit: cover;
-}
-html .actu-screen section .section-desktop .post-list .post-title-desc, body .actu-screen section .section-desktop .post-list .post-title-desc {
-  position: absolute;
-  background-color: white;
-  border: 2px solid #113C54;
-  right: 0;
-  top: 0;
-  height: auto;
-  width: 32%;
-  border-radius: 5px 50px 5px 5px;
-}
-html .actu-screen section .section-desktop .post-list .post-title-desc h3, html .actu-screen section .section-desktop .post-list .post-title-desc .h3, body .actu-screen section .section-desktop .post-list .post-title-desc h3, body .actu-screen section .section-desktop .post-list .post-title-desc .h3 {
-  text-align: start;
-  padding: 8px;
-  margin-bottom: 1%;
-  font-family: "Tilt Neon", cursive;
-  color: #113C54;
-}
-html .actu-screen section .section-desktop .post-list .post-title-desc p, body .actu-screen section .section-desktop .post-list .post-title-desc p {
-  text-align: justify;
-  padding: 8px;
-  font-family: Constantia, cursive;
-}
-html .actu-screen section .section-desktop .post-list ul, body .actu-screen section .section-desktop .post-list ul {
-  position: absolute;
-  right: 7%;
-  bottom: 15%;
-  list-style-type: none;
-}
-html .actu-screen section .section-desktop .post-list ul li, body .actu-screen section .section-desktop .post-list ul li {
-  font-family: Constantia, cursive;
-  text-align: justify;
-}
-html .actu-screen section .section-desktop .post-list button, body .actu-screen section .section-desktop .post-list button {
-  position: absolute;
-  border: none;
-  border-radius: 90%;
-  background-color: transparent;
-  bottom: 7%;
-  left: 3%;
-}
-html .actu-screen section .section-desktop .post-list button img, body .actu-screen section .section-desktop .post-list button img {
-  border-radius: 90%;
 }
 html .actu-screen footer, body .actu-screen footer {
   z-index: 4;
