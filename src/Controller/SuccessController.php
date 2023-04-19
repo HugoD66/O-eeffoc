@@ -19,14 +19,6 @@ class SuccessController extends AbstractController
         $user= $this->getUser();
         $messageNotif = $doctrine->getRepository(Message::class)->findAll();
 
-        $detect = new MobileDetect($request->headers->all());
-        if ($detect->isMobile()) {
-            $isMobile = true;
-        } else {
-            // Code pour les ordinateurs de bureau
-            $isMobile = false;
-
-        }
         return $this->render('actu/actu.html.twig', [
             'title' => 'O-eeffoC Succés Changement MDP',
             'user' => $user,

@@ -1,13 +1,10 @@
 <aside>
-    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
-    {% else %}
         <div class="aside-desktop">
             {% if not user  %}
             {% else %}
                 {{ component('user_search') }}
             {% endif %}
         </div>
-    {% endif %}
 </aside>
 <script>
     const followButtons = document.querySelectorAll('.follow-button');

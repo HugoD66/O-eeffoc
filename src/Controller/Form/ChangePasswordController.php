@@ -22,14 +22,6 @@ class ChangePasswordController extends AbstractController
                           EntityManagerInterface $entityManager): Response
     {
 
-        $detect = new MobileDetect($request->headers->all());
-        if ($detect->isMobile()) {
-            $isMobile = true;
-        } else {
-            // Code pour les ordinateurs de bureau
-            $isMobile = false;
-        }
-
         $user= $this->getUser();
         $messageNotif = $doctrine->getRepository(Message::class)->findAll();
 
@@ -52,7 +44,6 @@ class ChangePasswordController extends AbstractController
             'title' => 'O-eeffoc Changement MDP',
             'user'  => $user,
             'form' => $form->createView(),
-            'isMobile' => $isMobile,
             'messageNotif'       => $messageNotif,
 
             ]);

@@ -1,14 +1,12 @@
 <header>
-    <!-- Sa bio, picture ... -->
-    {% if app.request.headers.get('User-Agent') matches '/Mobile|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i' %}
-        <!-- Code pour les appareils mobiles -->
         <div class="header-mobile">
             {% if user %}
                 {% if user.getPicture  %}
                     <img src="{{ asset('images/recipe-picture/' ~ user.getPicture()) }}" alt="Photo de profil sans enregistrement.">
                 {% else %}
                     <img src="{{ asset('images/const/picture-profil-if-not-connected.png') }}" alt="">
-                {% endif %}                <div class="description-user">
+                {% endif %}
+                <div class="description-user">
                     <ul>
                         <li>{{ user.username }}</li>
                     {% if not user.getBirthday or not user.getBio or not user.getPicture %}
@@ -24,8 +22,8 @@
                 <img src="{{ asset('images/const/picture-profil-if-not-connected.png') }}" alt="">
             {% endif %}
         </div>
-    {% else %}
-        <!-- Code pour desktop -->
+
+
         <div class="header-desktop">
             {% if user %}
                 {% if user.getPicture  %}
@@ -53,6 +51,5 @@
                 </div>
             {% endif %}
         </div>
-    {% endif %}
 </header>
 

@@ -20,15 +20,6 @@ class GestionController extends AbstractController
                           Request $request): Response
     {
 
-
-        $detect = new MobileDetect($request->headers->all());
-        if ($detect->isMobile()) {
-            $isMobile = true;
-        } else {
-            // Code pour les ordinateurs de bureau
-            $isMobile = false;
-        }
-
         $user = $doctrine->getRepository(User::class)->find($id);
         $userList = $doctrine->getRepository(User::class)->findAll();
         $userPost =  $doctrine->getRepository(Post::class)->findBy(['createdBy' => $user]);

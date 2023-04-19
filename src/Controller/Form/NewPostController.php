@@ -25,13 +25,6 @@ class NewPostController extends AbstractController
                           EntityManagerInterface $entityManager,
                           SluggerInterface $slugger): Response
     {
-        $detect = new MobileDetect($request->headers->all());
-        if ($detect->isMobile()) {
-            $isMobile = true;
-        } else {
-            // Code pour les ordinateurs de bureau
-            $isMobile = false;
-        }
 
         $user= $this->getUser();
         $messageNotif = $doctrine->getRepository(Message::class)->findAll();

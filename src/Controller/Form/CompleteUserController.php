@@ -27,14 +27,6 @@ class CompleteUserController extends AbstractController
                           SluggerInterface $slugger): Response
     {
 
-
-        $detect = new MobileDetect($request->headers->all());
-        if ($detect->isMobile()) {
-            $isMobile = true;
-        } else {
-            // Code pour les ordinateurs de bureau
-            $isMobile = false;
-        }
         $userList = $doctrine->getRepository(User::class)->findAll();
         $messageNotif = $doctrine->getRepository(Message::class)->findAll();
 
@@ -65,7 +57,6 @@ class CompleteUserController extends AbstractController
         return $this->render('actu/actu.html.twig', [
             'form'          => $form->createView(),
             'title'         => 'O-eeffoC Finir enregistrement',
-            'isMobile'      => $isMobile,
             'user'          => $user,
             'userList'      => $userList,
             'messageNotif'       => $messageNotif,

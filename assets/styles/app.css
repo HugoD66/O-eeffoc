@@ -21590,7 +21590,7 @@ html .full-screen .buttons-select, body .full-screen .buttons-select {
 html .full-screen .buttons-select .buttonDejaInscrit, body .full-screen .buttons-select .buttonDejaInscrit {
   border: none;
   background-color: white;
-  font-size: 1.8em;
+  font-size: 50px;
   font-family: Oswald, sans-serif;
 }
 @media (min-width: 1000px) {
@@ -21658,8 +21658,8 @@ html .full-screen .buttons-select .buttonRegister:hover:before, body .full-scree
 html .actu-screen, body .actu-screen {
   min-height: 100%;
 }
-@media (min-width: 1000px) {
-  html .actu-screen header, body .actu-screen header {
+@media (min-width: 1100px) {
+  html .actu-screen, body .actu-screen {
     display: flex;
     align-items: start;
     flex-direction: row;
@@ -21679,9 +21679,25 @@ html .actu-screen header .header-mobile, body .actu-screen header .header-mobile
   justify-content: space-between;
   flex-direction: row-reverse;
 }
+@media (min-width: 780px) and (max-width: 850px) {
+  html .actu-screen header .header-mobile, body .actu-screen header .header-mobile {
+    height: 28vw;
+  }
+}
+@media (min-width: 850px) and (max-width: 940px) {
+  html .actu-screen header .header-mobile, body .actu-screen header .header-mobile {
+    height: 25vw;
+  }
+}
+@media (min-width: 940px) {
+  html .actu-screen header .header-mobile, body .actu-screen header .header-mobile {
+    height: 23vw;
+  }
+}
 html .actu-screen header .header-mobile img, body .actu-screen header .header-mobile img {
-  width: 280px;
-  height: 280px;
+  width: 200px;
+  height: auto;
+  max-height: 200px;
   border-radius: 90%;
   margin-right: 3%;
 }
@@ -21709,12 +21725,17 @@ html .actu-screen header .header-mobile .description-user p, body .actu-screen h
   margin: auto;
 }
 html .actu-screen header .header-desktop, body .actu-screen header .header-desktop {
+  display: none;
   background: linear-gradient(0deg, hsl(200deg, 84%, 87%) 0%, hsl(201deg, 66%, 40%) 100%);
   width: 17vw;
-  height: 92vh;
+  height: 96vh;
   margin: 2% auto auto 10%;
-  transform: translateX(-50%);
   border-radius: 10px 10px 30% 10px;
+}
+@media (min-width: 1100px) {
+  html .actu-screen header .header-desktop, body .actu-screen header .header-desktop {
+    display: block;
+  }
 }
 html .actu-screen header .header-desktop img, body .actu-screen header .header-desktop img {
   max-width: 100%;
@@ -21765,7 +21786,18 @@ html .actu-screen nav, body .actu-screen nav {
   top: 77px;
   right: 4vw;
 }
-@media (min-width: 1000px) {
+@media (min-width: 200px) and (max-width: 650px) {
+  html .actu-screen nav, body .actu-screen nav {
+    top: 40px;
+    right: 1vw;
+  }
+}
+@media (min-width: 650px) and (max-width: 750px) {
+  html .actu-screen nav, body .actu-screen nav {
+    top: 60px;
+  }
+}
+@media (min-width: 1100px) {
   html .actu-screen nav, body .actu-screen nav {
     right: 10vw;
     top: 5vh;
@@ -21807,6 +21839,11 @@ html .actu-screen nav .nav-mobile button img, body .actu-screen nav .nav-mobile 
 html .actu-screen nav .nav-mobile button img:hover, body .actu-screen nav .nav-mobile button img:hover {
   filter: blur(5px);
 }
+@media (min-width: 1100px) {
+  html .actu-screen nav .nav-mobile, body .actu-screen nav .nav-mobile {
+    display: none;
+  }
+}
 html .actu-screen nav .nav-desktop, body .actu-screen nav .nav-desktop {
   display: flex;
   align-items: center;
@@ -21831,7 +21868,7 @@ html .actu-screen aside, body .actu-screen aside {
 }
 @media (min-width: 1000px) {
   html .actu-screen aside, body .actu-screen aside {
-    width: 15vw;
+    width: 16vw;
     height: 70%;
     position: absolute;
     top: 3vh;
@@ -21843,6 +21880,11 @@ html .actu-screen aside .aside-desktop, body .actu-screen aside .aside-desktop {
   justify-content: space-between;
   align-items: center;
   overflow-x: hidden;
+}
+@media (max-width: 1100px) {
+  html .actu-screen aside .aside-desktop, body .actu-screen aside .aside-desktop {
+    display: none;
+  }
 }
 html .actu-screen aside .aside-desktop input, body .actu-screen aside .aside-desktop input {
   width: 75%;
@@ -21901,23 +21943,78 @@ html .actu-screen aside .aside-desktop .user-list button img, body .actu-screen 
 }
 html .actu-screen section, body .actu-screen section {
   position: fixed;
-  top: 375px;
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
-  max-height: 65%;
   overflow-y: auto;
   border: 1px solid #0E222D;
-  height: auto;
-  min-height: 800px;
   border-radius: 5px;
+  padding: 10px;
+  /*
+  top: 320px;
+  bottom: 8vh;
+  min-height: 800px;
+  max-height: 65%;
+  height: auto;
+  */
   /* Same pour les Deux  */
   /* Formulaires */
   /* Liste des followers dans la page actu*/
   /* Fin de Same ! */
 }
-html .actu-screen section .section-mobile, body .actu-screen section .section-mobile {
-  padding: 10px;
+@media (min-width: 200px) and (max-width: 550px) {
+  html .actu-screen section, body .actu-screen section {
+    top: 200px;
+    min-height: 70vh;
+    max-height: 70vh;
+  }
+}
+@media (min-width: 550px) and (max-width: 650px) {
+  html .actu-screen section, body .actu-screen section {
+    top: 230px;
+    min-height: 67vh;
+    max-height: 67vh;
+  }
+}
+@media (min-width: 650px) and (max-width: 750px) {
+  html .actu-screen section, body .actu-screen section {
+    top: 250px;
+    min-height: 66vh;
+    max-height: 66vh;
+  }
+}
+@media (min-width: 750px) and (max-width: 810px) {
+  html .actu-screen section, body .actu-screen section {
+    top: 270px;
+    min-height: 64vh;
+    max-height: 64vh;
+  }
+}
+@media (min-width: 810px) and (max-width: 1000px) {
+  html .actu-screen section, body .actu-screen section {
+    top: 260px;
+    min-height: 65vh;
+    max-height: 65vh;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+  html .actu-screen section, body .actu-screen section {
+    top: 280px;
+    min-height: 63vh;
+    max-height: 63vh;
+  }
+}
+@media (min-width: 1100px) {
+  html .actu-screen section, body .actu-screen section {
+    min-height: 62vh;
+    max-height: 62vh;
+  }
+}
+@media (min-width: 1100px) {
+  html .actu-screen section .section-mobile, body .actu-screen section .section-mobile {
+    display: none;
+    visibility: hidden;
+  }
 }
 html .actu-screen section .section-mobile .gestion-user, body .actu-screen section .section-mobile .gestion-user {
   width: 100%;
@@ -21928,7 +22025,12 @@ html .actu-screen section .section-mobile .gestion-user .gestion-user-title, bod
 }
 html .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2 {
   font-family: "Tilt Neon", cursive;
-  font-size: 10em;
+  font-size: 5em;
+}
+@media (min-width: 600px) {
+  html .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h2, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h2 {
+    font-size: 8em;
+  }
 }
 html .actu-screen section .section-mobile .gestion-user .gestion-user-title h3, html .actu-screen section .section-mobile .gestion-user .gestion-user-title .h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title h3, body .actu-screen section .section-mobile .gestion-user .gestion-user-title .h3 {
   font-family: "Tilt Neon", cursive;
@@ -21971,7 +22073,67 @@ html .actu-screen section .section-mobile .gestion-user .gestion-user-title-butt
   margin: auto;
   font-size: 1.3em;
 }
-html .actu-screen section .section-mobile .post-list, body .actu-screen section .section-mobile .post-list {
+@media (max-width: 1100px) {
+  html .actu-screen section .section-desktop, body .actu-screen section .section-desktop {
+    display: none;
+  }
+}
+html .actu-screen section .section-desktop .gestion-user-desktop, body .actu-screen section .section-desktop .gestion-user-desktop {
+  height: 100%;
+  width: 100%;
+  /* Page de gestion */
+}
+html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title {
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: space-around;
+}
+html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2 {
+  font-family: "Tilt Neon", cursive;
+  font-size: 4em;
+  text-align: center;
+}
+html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a {
+  text-decoration: none;
+  color: #411a04;
+}
+html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3 {
+  display: inline-block;
+  margin-left: 4vh;
+  font-family: Consolas, serif;
+  text-decoration: underline;
+  text-underline: 1px solid #FFD4BC;
+  color: #260f01;
+  font-size: 2.2em;
+  margin-right: 2%;
+  margin-bottom: 3%;
+}
+html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button {
+  display: inline-block;
+  margin-right: 4%;
+  border-radius: 90%;
+}
+html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a {
+  font-family: "JetBrains Mono", monospace;
+  text-decoration: none;
+  color: #1A6289;
+  margin: auto;
+}
+@media (min-width: 1100px) {
+  html .actu-screen section, body .actu-screen section {
+    left: 50%;
+    padding: 0;
+    transform: translateX(-50%);
+    width: 60%;
+    top: 18vh;
+    height: 2000px;
+    min-height: 78vh;
+    border-radius: 5px;
+    border-color: #FFD4BC;
+  }
+}
+html .actu-screen section .post-list, body .actu-screen section .post-list {
   position: relative;
   width: 100%;
   margin: 2%;
@@ -21979,14 +22141,27 @@ html .actu-screen section .section-mobile .post-list, body .actu-screen section 
   background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
   border-radius: 66% 34% 79% 21%/30% 70% 30% 70%;
 }
-html .actu-screen section .section-mobile .post-list h1, html .actu-screen section .section-mobile .post-list .h1, body .actu-screen section .section-mobile .post-list h1, body .actu-screen section .section-mobile .post-list .h1 {
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list, body .actu-screen section .post-list {
+    width: 95%;
+    height: auto;
+    background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
+    border-radius: 5px 20% 5px 5px;
+  }
+}
+html .actu-screen section .post-list h1, html .actu-screen section .post-list .h1, body .actu-screen section .post-list h1, body .actu-screen section .post-list .h1 {
   margin-right: 10%;
   margin-top: 5%;
   font-family: "Tilt Neon", cursive;
   color: #411a04;
   text-align: end;
 }
-html .actu-screen section .section-mobile .post-list img, body .actu-screen section .section-mobile .post-list img {
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list h1, html .actu-screen section .post-list .h1, body .actu-screen section .post-list h1, body .actu-screen section .post-list .h1 {
+    margin-left: 5%;
+  }
+}
+html .actu-screen section .post-list img, body .actu-screen section .post-list img {
   border-radius: 3px;
   max-width: 75%;
   margin-left: 3%;
@@ -21995,7 +22170,13 @@ html .actu-screen section .section-mobile .post-list img, body .actu-screen sect
   max-height: 95%;
   object-fit: cover;
 }
-html .actu-screen section .section-mobile .post-list .post-title-desc, body .actu-screen section .section-mobile .post-list .post-title-desc {
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list img, body .actu-screen section .post-list img {
+    max-width: 37vw;
+    max-height: 95%;
+  }
+}
+html .actu-screen section .post-list .post-title-desc, body .actu-screen section .post-list .post-title-desc {
   position: absolute;
   background-color: white;
   border: 2px solid #113C54;
@@ -22005,166 +22186,79 @@ html .actu-screen section .section-mobile .post-list .post-title-desc, body .act
   width: 60%;
   border-radius: 10px;
 }
-html .actu-screen section .section-mobile .post-list .post-title-desc h3, html .actu-screen section .section-mobile .post-list .post-title-desc .h3, body .actu-screen section .section-mobile .post-list .post-title-desc h3, body .actu-screen section .section-mobile .post-list .post-title-desc .h3 {
-  padding: 8px;
-  margin-bottom: 1%;
-  font-family: "Tilt Neon", cursive;
-  color: #113C54;
-}
-html .actu-screen section .section-mobile .post-list .post-title-desc p, body .actu-screen section .section-mobile .post-list .post-title-desc p {
-  text-align: justify;
-  padding: 4px;
-  margin-top: 1%;
-  font-family: Constantia, cursive;
-  font-size: 1.5em;
-}
-html .actu-screen section .section-mobile .post-list ul, body .actu-screen section .section-mobile .post-list ul {
-  position: absolute;
-  right: 5%;
-  bottom: 10%;
-  list-style-type: none;
-  line-height: 2.2em;
-}
-html .actu-screen section .section-mobile .post-list ul li, body .actu-screen section .section-mobile .post-list ul li {
-  text-align: end;
-  font-size: 2em;
-  font-family: Constantia, cursive;
-}
-html .actu-screen section .section-mobile .post-list button, body .actu-screen section .section-mobile .post-list button {
-  position: absolute;
-  background-color: transparent;
-  right: 2%;
-  top: 25%;
-  border: none;
-}
-html .actu-screen section .section-mobile .post-list button img, body .actu-screen section .section-mobile .post-list button img {
-  border-radius: 90%;
-  width: 15vw;
-}
-@media (min-width: 1000px) {
-  html .actu-screen section, body .actu-screen section {
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60%;
-    top: 18vh;
-    height: 2000px;
-    min-height: 78vh;
-  }
-  html .actu-screen section .section-mobile, body .actu-screen section .section-mobile {
-    display: none;
-  }
-  html .actu-screen section .section-desktop, body .actu-screen section .section-desktop {
-    border-radius: 5px;
-    border-color: #FFD4BC;
-    /* Component POST (Actu) Desktop */
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop, body .actu-screen section .section-desktop .gestion-user-desktop {
-    height: 100%;
-    width: 100%;
-    /* Page de gestion */
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title {
-    display: flex;
-    margin: auto;
-    align-items: center;
-    justify-content: space-around;
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title h2, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title .h2 {
-    font-family: "Tilt Neon", cursive;
-    font-size: 4em;
-    text-align: center;
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-desktop-buttons-title a {
-    text-decoration: none;
-    color: #411a04;
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button h3, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button .h3 {
-    display: inline-block;
-    margin-left: 4vh;
-    font-family: Consolas, serif;
-    text-decoration: underline;
-    text-underline: 1px solid #FFD4BC;
-    color: #260f01;
-    font-size: 2.2em;
-    margin-right: 2%;
-    margin-bottom: 3%;
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button {
-    display: inline-block;
-    margin-right: 4%;
-    border-radius: 90%;
-  }
-  html .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a, body .actu-screen section .section-desktop .gestion-user-desktop .gestion-user-post-titl-button button a {
-    font-family: "JetBrains Mono", monospace;
-    text-decoration: none;
-    color: #1A6289;
-    margin: auto;
-  }
-  html .actu-screen section .section-desktop .post-list, body .actu-screen section .section-desktop .post-list {
-    position: relative;
-    width: 95%;
-    margin: 2%;
-    height: auto;
-    background: linear-gradient(90deg, hsl(196deg, 52%, 48%) 0%, hsl(21deg, 100%, 87%) 100%);
-    border-radius: 5px 20% 5px 5px;
-  }
-  html .actu-screen section .section-desktop .post-list h1, html .actu-screen section .section-desktop .post-list .h1, body .actu-screen section .section-desktop .post-list h1, body .actu-screen section .section-desktop .post-list .h1 {
-    margin-left: 5%;
-    font-family: "Tilt Neon", cursive;
-    color: #260f01;
-  }
-  html .actu-screen section .section-desktop .post-list img, body .actu-screen section .section-desktop .post-list img {
-    border-radius: 3px;
-    max-width: 37vw;
-    margin-left: 3%;
-    margin-bottom: 3%;
-    box-shadow: 0 0 18px 1px #000000;
-    max-height: 95%;
-    object-fit: cover;
-  }
-  html .actu-screen section .section-desktop .post-list .post-title-desc, body .actu-screen section .section-desktop .post-list .post-title-desc {
-    position: absolute;
-    background-color: white;
-    border: 2px solid #113C54;
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list .post-title-desc, body .actu-screen section .post-list .post-title-desc {
     right: 0;
     top: 0;
     height: auto;
     width: 32%;
     border-radius: 5px 50px 5px 5px;
   }
-  html .actu-screen section .section-desktop .post-list .post-title-desc h3, html .actu-screen section .section-desktop .post-list .post-title-desc .h3, body .actu-screen section .section-desktop .post-list .post-title-desc h3, body .actu-screen section .section-desktop .post-list .post-title-desc .h3 {
+}
+html .actu-screen section .post-list .post-title-desc h3, html .actu-screen section .post-list .post-title-desc .h3, body .actu-screen section .post-list .post-title-desc h3, body .actu-screen section .post-list .post-title-desc .h3 {
+  padding: 8px;
+  margin-bottom: 1%;
+  font-family: "Tilt Neon", cursive;
+  color: #113C54;
+}
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list .post-title-desc h3, html .actu-screen section .post-list .post-title-desc .h3, body .actu-screen section .post-list .post-title-desc h3, body .actu-screen section .post-list .post-title-desc .h3 {
     text-align: start;
-    padding: 8px;
     margin-bottom: 1%;
-    font-family: "Tilt Neon", cursive;
-    color: #113C54;
   }
-  html .actu-screen section .section-desktop .post-list .post-title-desc p, body .actu-screen section .section-desktop .post-list .post-title-desc p {
-    text-align: justify;
+}
+html .actu-screen section .post-list .post-title-desc p, body .actu-screen section .post-list .post-title-desc p {
+  text-align: justify;
+  padding: 4px;
+  margin-top: 1%;
+  font-family: Constantia, cursive;
+  font-size: 1.5em;
+}
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list .post-title-desc p, body .actu-screen section .post-list .post-title-desc p {
     padding: 8px;
-    font-family: Constantia, cursive;
   }
-  html .actu-screen section .section-desktop .post-list ul, body .actu-screen section .section-desktop .post-list ul {
-    position: absolute;
+}
+html .actu-screen section .post-list ul, body .actu-screen section .post-list ul {
+  position: absolute;
+  right: 5%;
+  bottom: 10%;
+  list-style-type: none;
+  line-height: 2.2em;
+}
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list ul, body .actu-screen section .post-list ul {
     right: 7%;
     bottom: 15%;
-    list-style-type: none;
   }
-  html .actu-screen section .section-desktop .post-list ul li, body .actu-screen section .section-desktop .post-list ul li {
-    font-family: Constantia, cursive;
+}
+html .actu-screen section .post-list ul li, body .actu-screen section .post-list ul li {
+  text-align: end;
+  font-size: 2em;
+  font-family: Constantia, cursive;
+}
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list ul li, body .actu-screen section .post-list ul li {
     text-align: justify;
   }
-  html .actu-screen section .section-desktop .post-list button, body .actu-screen section .section-desktop .post-list button {
-    position: absolute;
-    border: none;
+}
+html .actu-screen section .post-list button, body .actu-screen section .post-list button {
+  position: absolute;
+  background-color: transparent;
+  right: 2%;
+  top: 25%;
+  border: none;
+}
+@media (min-width: 1100px) {
+  html .actu-screen section .post-list button, body .actu-screen section .post-list button {
     border-radius: 90%;
-    background-color: transparent;
     bottom: 7%;
     left: 3%;
   }
-  html .actu-screen section .section-desktop .post-list button img, body .actu-screen section .section-desktop .post-list button img {
-    border-radius: 90%;
-  }
+}
+html .actu-screen section .post-list button img, body .actu-screen section .post-list button img {
+  border-radius: 90%;
+  width: 15vw;
 }
 html .actu-screen section .redirect-succes, body .actu-screen section .redirect-succes {
   display: flex;
@@ -22193,6 +22287,7 @@ html .actu-screen section .redirect-succes p, body .actu-screen section .redirec
   font-weight: lighter;
 }
 html .actu-screen section .form-one-complete-user, body .actu-screen section .form-one-complete-user {
+  position: relative; /* */
   height: 100%;
   margin: auto;
   display: flex;
@@ -22714,32 +22809,36 @@ html .actu-screen footer .footer-mobile, body .actu-screen footer .footer-mobile
   }
 }
 html .actu-screen footer .footer-mobile img, body .actu-screen footer .footer-mobile img {
-  height: 180px;
-  max-height: 180px;
-  width: 180px;
-  max-width: 180px;
-}
-@media (min-width: 700px) {
-  html .actu-screen footer .footer-mobile img, body .actu-screen footer .footer-mobile img {
-    max-height: 120px;
-    max-width: 120px;
-  }
+  height: 80px;
+  max-height: 80px;
+  width: 80px;
+  max-width: 80px;
 }
 html .actu-screen footer .footer-mobile p, body .actu-screen footer .footer-mobile p {
-  font-size: 90px;
+  font-size: 40px;
   color: #3A98B9;
 }
+@media (max-width: 1100px) {
+  html .actu-screen footer .footer-mobile, body .actu-screen footer .footer-mobile {
+    display: flex;
+  }
+}
+@media (min-width: 1100px) {
+  html .actu-screen footer .footer-mobile, body .actu-screen footer .footer-mobile {
+    display: none;
+  }
+}
 html .actu-screen footer .footer-desktop, body .actu-screen footer .footer-desktop {
+  display: none;
   position: fixed;
   backdrop-filter: blur(8px);
   height: auto;
-  width: 15vw;
-  bottom: 4vh;
+  width: 16vw;
+  bottom: 3vh;
   right: 2.5vw;
   border: 1px solid #D87F4D;
   border-radius: 15px;
   box-shadow: 0 0 10px 4px #411a04;
-  display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
@@ -22748,6 +22847,11 @@ html .actu-screen footer .footer-desktop, body .actu-screen footer .footer-deskt
   -webkit-user-select: none;
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+@media (min-width: 1100px) {
+  html .actu-screen footer .footer-desktop, body .actu-screen footer .footer-desktop {
+    display: flex;
+  }
 }
 html .actu-screen footer .footer-desktop img, body .actu-screen footer .footer-desktop img {
   height: 100px;
@@ -22796,7 +22900,7 @@ html .actu-screen footer .footer-desktop p, body .actu-screen footer .footer-des
   z-index: 9999;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
-  width: 50vw;
+  width: 80vw;
 }
 .modale form {
   display: flex;
@@ -22818,10 +22922,10 @@ html .actu-screen footer .footer-desktop p, body .actu-screen footer .footer-des
 }
 .modale form div label {
   font-family: "Lato", sans-serif;
-  font-size: 2em;
+  font-size: 50px;
   margin-bottom: 0;
   text-align: center;
-  width: 25vw;
+  width: 50vw;
   border-radius: 15px;
 }
 @media (min-width: 1000px) {
@@ -23229,6 +23333,56 @@ html .actu-screen footer .footer-desktop p, body .actu-screen footer .footer-des
     width: 27px;
     height: 27px;
     font-size: 1.2em;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .header-mobile {
+    visibility: visible;
+  }
+  .header-desktop {
+    visibility: hidden;
+    display: none;
+  }
+  .nav-mobile {
+    visibility: visible;
+  }
+  .nav-desktop {
+    visibility: hidden;
+    display: none;
+  }
+  .footer-mobile {
+    visibility: visible;
+  }
+  .footer-desktop {
+    visibility: hidden;
+    display: none;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .header-mobile {
+    visibility: hidden;
+    display: none;
+  }
+  .header-desktop {
+    visibility: visible;
+    display: block;
+  }
+  .nav-mobile {
+    visibility: hidden;
+    display: none;
+  }
+  .nav-desktop {
+    visibility: visible;
+    display: block;
+  }
+  .footer-mobile {
+    visibility: hidden;
+    display: none;
+  }
+  .footer-desktop {
+    visibility: visible;
+    display: flex;
   }
 }
 
